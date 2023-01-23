@@ -1,0 +1,9 @@
+.Add {
+  text-align: center;
+}
+
+#releaseDate {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+  }

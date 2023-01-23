@@ -14,7 +14,9 @@ const Recording = (props) => {
   return (
     <Container>
       <Card bg='info'>
-        <Card.Header className='text-center'>{props.title}</Card.Header>
+        <Card.Header className='text-center'>
+          {props.title}
+        </Card.Header>
         <Card.Body>
           <Tabs defaultActiveKey="Information">
             <Tab eventKey="Information" title="Information">

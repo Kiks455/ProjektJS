@@ -112,9 +112,50 @@ async function getRecordings() {
     }
 }
 
+async function deleteRecording(id) {
+    try{
+        const response = await recordingsAxiosInstance({
+            url: '/recording/' + id,
+            method: 'delete'
+        })
+    
+        return response;
+    }
+    catch(error){
+        return error;
+    }
+}
+
+function addNewRecording(recording) {
+    try{
+        const response = recordingsAxiosInstance.post("/recording", recording);
+    
+        return response;
+    }
+    catch(error){
+        return error;
+    }
+    
+}
+
+function editRecording(index, recording) {
+    try{
+        const response = recordingsAxiosInstance.put("/recording/" + index, recording);
+    
+        return response;
+    }
+    catch(error){
+        return error;
+    }
+    
+}
+
 const recordingsService = {
     addRecordings: addRecordings,
-    getRecordings: getRecordings
+    getRecordings: getRecordings,
+    deleteRecording: deleteRecording,
+    addNewRecording: addNewRecording,
+    editRecording: editRecording
 }
 
 export default recordingsService;
